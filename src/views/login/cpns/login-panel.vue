@@ -41,7 +41,6 @@ const currentTab = ref('account')
 const handleLoginClick = () => {
   if (currentTab.value === 'account') {
     accountRef.value?.loginAction(isKeepPassword.value)
-    console.log(accountRef.value)
   } else {
     console.log('phoneRef调用loginAction')
   }

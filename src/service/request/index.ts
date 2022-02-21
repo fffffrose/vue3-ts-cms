@@ -83,9 +83,9 @@ class OriginAxios {
         .request<any, T>(config)
         .then((res) => {
           //单个请求对数据的处理
-          if (config.interceptors?.responseInterceptor) {
-            // res = config.interceptors.responseInterceptor(res)
-          }
+          // if (config.interceptors?.responseInterceptor) {
+          // res = config.interceptors.responseInterceptor(res)
+          // }
           //不会影响下一个请求
           this.showLoading = true
           //resolve返回出去

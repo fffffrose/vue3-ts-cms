@@ -1,4 +1,5 @@
 import OriginAxios from './request'
+import localCache from '@/utils/cache'
 import { BASE_URL, TIME_OUT } from './request/config'
 
 const originAxios = new OriginAxios({
@@ -7,7 +8,7 @@ const originAxios = new OriginAxios({
   //此处配置的是封装后的拦截器
   interceptors: {
     requestInterceptor: (config) => {
-      const token = ''
+      const token = localCache.getCache('token')
       if (token) {
         config.headers.Authorization = `Bearer ${token}`
       }

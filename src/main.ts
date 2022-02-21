@@ -2,19 +2,18 @@ import { createApp } from 'vue'
 import { globalRegister } from './global'
 import 'normalize.css'
 import './assets/css/index.less'
-
 import type { App } from 'vue'
-
 import rootApp from './App.vue'
-
 import router from './router'
 import store from './store'
+import { setupStore } from './store'
 
 const app: App = createApp(rootApp)
 
 app.use(globalRegister)
 app.use(router)
 app.use(store)
+setupStore()
 // app.use(ElementPlus)
 app.mount('#app')
 // createApp(App).mount('#app')
