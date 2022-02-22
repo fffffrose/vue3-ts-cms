@@ -2,7 +2,7 @@
   <div class="nav-menu">
     <div class="logo">
       <img class="img" src="~@/assets/img/logo.svg" alt="" />
-      <span class="title">Vue+Ts</span>
+      <span v-if="!collapse" class="title">Vue+Ts</span>
     </div>
     <el-menu
       :default-active="defaultValue"
@@ -48,6 +48,12 @@
 <script setup lang="ts">
 import { useStore } from '@/store'
 import { computed } from '@vue/runtime-core'
+defineProps({
+  collapse: {
+    type: Boolean,
+    default: false
+  }
+})
 
 const store = useStore()
 const userMenus = computed(() => store.state.login.userMenu)

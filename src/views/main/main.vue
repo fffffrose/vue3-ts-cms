@@ -20,6 +20,15 @@
 
 <script setup lang="ts">
 import NavMenu from '@/components/nav-menu'
+import NavHeader from '@/components/nav-header'
+import { ref } from '@vue/reactivity'
+const isCollapse = ref(false)
+const handleFoldChange = (isFold: boolean) => {
+  isCollapse.value = isFold
+}
+// defineExpose({
+//   isCollapse
+// })
 </script>
 
 <style scoped lang="less">
